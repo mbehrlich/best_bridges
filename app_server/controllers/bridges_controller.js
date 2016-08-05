@@ -1,6 +1,6 @@
 /* GET homepage */
 module.exports.home = function(req, res) {
-  res.render('index', { title: 'Best Bridges' });
+  res.render('bridges', { title: 'Best Bridges' });
 };
 
 /* GET best bridges page */
