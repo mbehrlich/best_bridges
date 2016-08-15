@@ -17,7 +17,7 @@ router.get('/bridges/1/edit', ctrlBridge.editBridge);
 
 /* Review pages. */
 router.get('/bridges/1/reviews/new', ctrlReview.addReview);
-router.get('/bridges/1/reviews/1/edit', ctrlReview.editReview);
+router.get('/reviews/1/edit', ctrlReview.editReview);
 
 /* Session pages */
 router.get('/login', ctrlSession.login);

@@ -31,7 +31,9 @@ html
             li
               a(href='/users/1') Profile
 
+
     .container
+      #errors
       block content
 
       footer
@@ -40,5 +42,7 @@ html
             small &copy; Matthew Ehrlich 2016
 
 
+
     script(src='/javascripts/jquery-3.1.0.min.js')
     script(src='/bootstrap/js/bootstrap.min.js')
+    script(async, defer, src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjPmcD0QpT8q7WaePNFKBSwyVMGDItOLA&callback=initMap")
