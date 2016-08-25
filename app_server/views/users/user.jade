@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  .row.page-header
+    .col-lg-12
+      h1 Username
+      a.btn.btn-default.pull-right(href='/users/1/edit') Edit Info
+  .row
+    .col-xs-6.col-md-3
+      img.img-rounded(src="http://vignette1.wikia.nocookie.net/seinfeld/images/7/76/George-costanza.jpg/revision/latest?cb=20110406222711")
+    .col-xs-6.col-md-9
+      .panel.panel-primary
+        .panel-heading
+          h3.panel-title User Info
+        .panel-body
+          p Location: San Francisco
+          p Favorite Bridge: Golden Gate Bridge

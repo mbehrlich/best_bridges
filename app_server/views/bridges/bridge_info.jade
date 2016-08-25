@@ -1,0 +1,64 @@
+extends ../layout
+
+block content
+  .row.page-header
+    .col-lg-12
+      h1= bridge.name
+      a.btn.btn-default.pull-right(href='/bridges/#{bridge.id}/edit') Edit Bridge
+  .row
+    .col-xs-12.col-md-10
+      .row
+        .col-xs-12.col-sm-7
+          p.rating
+            +outputRating(bridge.rating)
+          .panel.panel-primary
+            .panel-heading
+              h3.panel-title Location
+            .panel-body
+              p= bridge.city
+          .panel.panel-primary
+            .panel-heading
+              h3.panel-title Type
+            .panel-body
+              p= bridge.bridgeType
+          .panel.panel-primary
+            .panel-heading
+              h3.panel-title Length
+            .panel-body
+              p= bridge.length
+          .panel.panel-primary
+            .panel-heading
+              h3.panel-title Height
+            .panel-body
+              p= bridge.height
+        .col-xs-12.col-sm-5
+          .row
+            img(src='/images/#{bridge.image}').col-xs-12
+          .row
+            .col-xs-12.location-map
+              .panel.panel-primary
+                .panel-heading
+                  h2.panel-title Map
+                .panel-body
+                  - var latLng = bridge.latLng.split(',');
+                  img.img-responsive.img-rounded(src='http://maps.googleapis.com/maps/api/staticmap?center=#{latLng[0]},#{latLng[1]}&zoom=12&size=400x350&sensor=false&markers=37.818056,-122.346667&scale=2&key=AIzaSyAjPmcD0QpT8q7WaePNFKBSwyVMGDItOLA')
+      .row
+        .col-xs-12
+          panel.panel-primary.review-panel
+            .panel-heading
+              a.btn.btn-default.pull-right(href='/bridges/#{bridge.id}/reviews/new') Add Review
+              h2.panel-title Reviews
+            .panel-body.review-container
+              each review in reviews
+                .row
+                  .review
+                    .well.well-sm.review-header
+                      span.rating
+                        +outputRating(review.rating)
+                      span.reviewAuthor= review.author
+                      small.reviewTimestamp= review.created
+                      a.btn.btn-default.pull-right(href='/reviews/#{review.id}/edit') Edit Review
+                    .col-xs-12
+                      p= review.body
+    .col-xs-12.col-md-2
+      p.lead= pageHeader.leadline

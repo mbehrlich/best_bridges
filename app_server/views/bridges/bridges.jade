@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+  #banner.page-header
+    .row
+      .col-lg-6
+        h1= pageHeader.title
+          small &nbsp;#{pageHeader.strapline}
+  .row
+    .col-sm-12.col-md-8
+      .row.list-group
+        each bridge in bridges
+          .col-xs-12.list-group-item
+            .col-xs-12.col-sm-8
+              h4
+                a(href='/bridges/#{bridge.id}')= bridge.name
+                small &nbsp;
+                  +outputRating(bridge.rating)
+                span.badge.pull-right.badge-default= bridge.distance
+              p.location= bridge.city
+            img(src='#{bridge.image}').col-xs-12.col-sm-4
+    .col-sm-12.col-md-4
+      p.lead At Best Bridges, you can find and rate the best bridges... in the world!
+      a.btn.btn-default(href='/bridges/new') Add a Bridge

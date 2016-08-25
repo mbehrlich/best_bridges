@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  h1 Signup
+  .row
+    .col-xs-12.col-md-6
+      form.form-horizontal(action="/users/1", method="get", role="form")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="username") Username
+          .col-xs-12.col-sm-10
+            input#username.form-control(name="username")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="password") Password
+          .col-xs-12.col-sm-10
+            input#password.form-control(name="password", type="password")
+        button.btn.btn-default Signup

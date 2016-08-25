@@ -1,0 +1,38 @@
+block form
+  .row
+    .col-xs-12.col-md-6
+      form.form-horizontal(action='/', method='get', role='form')
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="name") Bridge Name
+          .col-xs-12.col-sm-10
+            input#name.form-control(name="name", value="#{bridge.name}")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="bridgeType") Bridge Type
+          .col-xs-12.col-sm-10
+            input#bridgeType.form-control(name="bridgeType", value="#{bridge.bridgeType}")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="length") Bridge Length
+          .col-xs-12.col-sm-10
+            input#length.form-control(name="length", value="#{bridge.length}")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="height") Bridge Height
+          .col-xs-12.col-sm-10
+            input#height.form-control(name="height", value="#{bridge.height}")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="city") City, State, Country
+          .col-xs-12.col-sm-10
+            input#city.form-control(name="city", value="#{bridge.city}")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="image") Attach Image
+          .col-xs-12.col-sm-10
+            input#image(type="file", name="image", accept="image/*")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="coords") Location (click on the map)
+          .col-xs-12.col-sm-10
+            input#latlng.form-control(name="latlng", value="#{bridge.latLng}")
+
+        button.btn.btn-default.pull-right= submitTitle
+    .col-xs-12.col-md-6.map-container
+
+      #map.img-responsive.img-rounded.col-xs-12-col-sm-10
+  script(src='/javascripts/map-picker.js')

@@ -33,7 +33,17 @@ a {
   padding-top: 0px;
 }
 
+.map-container {
+  /*max-height: 500px;*/
+}
+
 #map {
-  height: 35vw;
+  height: 100vw;
+  max-height: 400px;
   /*width: 100%;*/
+}
+
+#image {
+  position: relative;
+  top: 10px;
 }
